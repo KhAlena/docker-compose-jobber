@@ -1,0 +1,5 @@
+[jobs]
+- name: Hello
+  cmd: echo "Hello"
+  onError: Continue
+  time: '0 * * * * *'

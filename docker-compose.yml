@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  # Cron service
+  jobber:
+    image: tamaranga-jobber:${TAG:-latest}
+    build:
+      context: ./docker/jobber/
+      dockerfile: Dockerfile
+    container_name: jobber
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+
+
+ # Docker Volumes
+volumes:
+  jobber:
+    driver: local
+
+
+
+
+
+
